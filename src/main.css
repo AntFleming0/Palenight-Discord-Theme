@@ -26,6 +26,12 @@ body {
     --custom-guild-list-width: calc(var(--guildbar-avatar-size) + var(--custom-guild-list-padding) * 2 + var(--border-thickness) * 2);
 
     --border-hover-transition: 0.2s ease;
+    
+    /* VSCode Palenight background colors defined early for Discord */
+    --bg-1: #32374C;
+    --bg-2: #31364a;
+    --bg-3: #25293A;
+    --bg-4: #292D3E;
 }
 
 .visual-refresh {
@@ -443,6 +449,11 @@ body {
     #app-mount,
     body {
         background: transparent !important;
+    }
+    
+    /* Set the base Discord background to match VSCode Palenight */
+    #app-mount .bg__960e4 {
+        background-color: var(--bg-4) !important; /* #292D3E */
     }
 }
 
