@@ -4,6 +4,12 @@
     --panel-backdrop-filter: none;
 
     --border-hover: var(--border-subtle);
+    
+    /* VSCode-like subtle border radius - less rounded than default */
+    --radius-xs: 2px;
+    --radius-sm: 3px;
+    --radius-md: 4px;
+    --radius-lg: 4px; /* VSCode uses very subtle corners */
 }
 
 body {
@@ -14,8 +20,8 @@ body {
     --code-font: 'Consolas', 'Courier New', monospace;
 
     /* sizes */
-    --gap: 12px; /* spacing between panels */
-    --divider-thickness: 4px; /* thickness of unread messages divider and highlighted message borders */
+    --gap: 8px; /* tighter spacing like VSCode */
+    --divider-thickness: 2px; /* thinner dividers like VSCode */
     --border-thickness: 1px; /* thickness of borders around main panels. DOES NOT AFFECT OTHER BORDERS */
     --custom-guild-list-width: calc(var(--guildbar-avatar-size) + var(--custom-guild-list-padding) * 2 + var(--border-thickness) * 2);
 
