@@ -1,0 +1,399 @@
+@property --colors {
+    syntax: 'off | on';
+    inherits: false;
+    initial-value: on;
+}
+
+:root {
+    /* VSCode Palenight (mild contrast) color scheme */
+    
+    /* text colors - based on Palenight text colors */
+    --text-0: hsl(230, 19%, 13%); /* text on colored elements - darker background */
+    --text-1: hsl(229, 25%, 93%); /* other normally white text - main foreground */
+    --text-2: hsl(224, 18%, 79%); /* headings and important text */
+    --text-3: hsl(229, 15%, 68%); /* normal text - comments/subtle */
+    --text-4: hsl(229, 13%, 52%); /* icon buttons and channels */
+    --text-5: hsl(230, 10%, 38%); /* muted channels/chats and timestamps */
+
+    /* background and dark colors - Palenight backgrounds */
+    --bg-1: hsl(230, 19%, 20%); /* dark buttons when clicked */
+    --bg-2: hsl(230, 19%, 16%); /* dark buttons - slightly lighter panel */
+    --bg-3: hsl(230, 19%, 15%); /* spacing, secondary elements - sidebar */
+    --bg-4: hsl(230, 19%, 13%); /* main background color - editor background */
+    --hover: hsla(229, 31%, 55%, 0.1); /* channels and buttons when hovered */
+    --active: hsla(229, 31%, 55%, 0.2); /* channels and buttons when clicked or selected */
+    --active-2: hsla(229, 31%, 55%, 0.3); /* extra state for transparent buttons */
+    --message-hover: hsla(230, 19%, 0%, 0.15); /* messages when hovered */
+
+    /* accent colors - Palenight uses purple/blue accents */
+    --accent-1: var(--palenight-blue); /* links and other accent text */
+    --accent-2: var(--palenight-purple); /* small accent elements */
+    --accent-3: var(--palenight-purple); /* accent buttons */
+    --accent-4: var(--palenight-purple-light); /* accent buttons when hovered */
+    --accent-5: var(--palenight-purple-dark); /* accent buttons when clicked */
+    --accent-new: var(--palenight-purple); /* stuff that's normally red like mute/deafen buttons */
+    --mention: linear-gradient(to right, color-mix(in hsl, var(--palenight-blue), transparent 90%) 40%, transparent); /* background of messages that mention you */
+    --mention-hover: linear-gradient(to right, color-mix(in hsl, var(--palenight-blue), transparent 95%) 40%, transparent); /* background of messages that mention you when hovered */
+    --reply: linear-gradient(to right, color-mix(in hsl, var(--text-3), transparent 90%) 40%, transparent); /* background of messages that reply to you */
+    --reply-hover: linear-gradient(to right, color-mix(in hsl, var(--text-3), transparent 95%) 40%, transparent); /* background of messages that reply to you when hovered */
+
+    /* status indicator colors - matching VSCode */
+    --online: var(--palenight-green); /* online status */
+    --dnd: var(--palenight-red); /* do not disturb */
+    --idle: var(--palenight-yellow); /* idle/away */
+    --streaming: var(--palenight-purple); /* streaming */
+    --offline: var(--text-4); /* offline */
+
+    /* border colors */
+    --border-light: hsl(230, 20%, 30%, 0.1); /* light border color */
+    --border: hsl(230, 20%, 30%, 0.2); /* normal border color */
+    --button-border: hsl(0, 0%, 100%, 0.1); /* neutral border color of buttons */
+
+    /* Palenight base colors - authentic VSCode Palenight palette */
+    --palenight-red: hsl(5, 74%, 67%); /* #F07178 - errors, deletions */
+    --palenight-red-dark: hsl(5, 74%, 60%);
+    --palenight-red-light: hsl(5, 74%, 74%);
+    
+    --palenight-orange: hsl(13, 93%, 66%); /* #F78C6C - constants, numbers */
+    --palenight-orange-dark: hsl(13, 93%, 60%);
+    --palenight-orange-light: hsl(13, 93%, 72%);
+    
+    --palenight-yellow: hsl(39, 100%, 71%); /* #FFCB6B - functions, warnings */
+    --palenight-yellow-dark: hsl(39, 100%, 64%);
+    --palenight-yellow-light: hsl(39, 100%, 78%);
+    
+    --palenight-green: hsl(95, 38%, 62%); /* #C3E88D - strings, added lines */
+    --palenight-green-dark: hsl(95, 38%, 55%);
+    --palenight-green-light: hsl(95, 38%, 69%);
+    
+    --palenight-cyan: hsl(191, 97%, 77%); /* #89DDFF - operators, special keywords */
+    --palenight-cyan-dark: hsl(191, 97%, 70%);
+    --palenight-cyan-light: hsl(191, 97%, 84%);
+    
+    --palenight-blue: hsl(207, 82%, 66%); /* #82AAFF - variables, properties */
+    --palenight-blue-dark: hsl(207, 82%, 60%);
+    --palenight-blue-light: hsl(207, 82%, 72%);
+    
+    --palenight-purple: hsl(261, 100%, 80%); /* #C792EA - keywords, tags */
+    --palenight-purple-dark: hsl(261, 100%, 74%);
+    --palenight-purple-light: hsl(261, 100%, 86%);
+    
+    --palenight-pink: hsl(324, 100%, 77%); /* #FF9CAC - special */
+    --palenight-pink-dark: hsl(324, 100%, 70%);
+    --palenight-pink-light: hsl(324, 100%, 84%);
+}
+
+@container root style(--colors: on) {
+    .visual-refresh body,
+    .visual-refresh .theme-dark:not(.custom-user-profile-theme),
+    .visual-refresh .theme-light:not(.custom-user-profile-theme) {
+        --activity-card-background: var(--bg-3);
+        --alert-bg: var(--palenight-red);
+        --autocomplete-bg: var(--bg-3);
+
+        --background-accent: var(--bg-2);
+        --background-floating: var(--bg-3);
+        --background-nested-floating: var(--bg-4);
+        --background-mentioned: var(--mention);
+        --background-mentioned-hover: var(--mention-hover);
+        --background-message-automod: var(--palenight-red);
+        --background-message-automod-hover: color-mix(in hsl, var(--palenight-red), transparent 20%);
+        --background-message-highlight: var(--reply);
+        --background-message-highlight-hover: var(--reply-hover);
+        --background-message-hover: var(--message-hover);
+        --background-mobile-primary: var(--bg-4);
+        --background-mobile-secondary: var(--bg-3);
+        --background-modifier-accent: var(--active);
+        --background-modifier-accent-2: var(--active-2);
+        --background-modifier-active: var(--active);
+        --background-modifier-hover: var(--hover);
+        --background-modifier-selected: var(--active);
+        --background-primary: var(--bg-4);
+        --background-secondary: var(--bg-3);
+        --background-secondary-alt: var(--bg-3);
+        --background-tertiary: var(--bg-2);
+
+        --bg-backdrop: hsl(0, 0%, 0%, 0.4);
+        --bg-backdrop-no-opacity: hsl(0, 0%, 0%);
+        --bg-brand: var(--palenight-purple);
+        --bg-mod-faint: var(--hover);
+        --bg-mod-strong: var(--active-2);
+        --bg-mod-subtle: var(--hover);
+        --bg-surface-overlay: var(--bg-3);
+        --bg-surface-overlay-tmp: var(--bg-3);
+        --bg-surface-raised: var(--bg-2);
+        --black: var(--bg-4);
+
+        --blur-fallback: var(--bg-3);
+        --blur-fallback-pressed: var(--bg-2);
+        --border-faint: var(--border-light);
+        --border-strong: var(--border);
+        --border-subtle: var(--border-light);
+        --bug-reporter-modal-submitting-background: var(--bg-3);
+
+        --button-creator-revenue-background: var(--palenight-green);
+        --button-danger-background: var(--palenight-red);
+        --button-danger-background-active: var(--palenight-red-dark);
+        --button-danger-background-disabled: var(--bg-1);
+        --button-danger-background-hover: var(--palenight-red-light);
+        --button-outline-brand-background: transparent;
+        --button-outline-brand-background-active: var(--palenight-purple);
+        --button-outline-brand-background-hover: var(--palenight-purple-dark);
+        --button-outline-brand-border: var(--palenight-purple);
+        --button-outline-brand-border-active: var(--palenight-purple);
+        --button-outline-brand-border-hover: var(--palenight-purple-light);
+        --button-outline-brand-text: var(--palenight-purple-light);
+        --button-outline-brand-text-active: var(--text-0);
+        --button-outline-brand-text-hover: var(--text-1);
+        --button-outline-danger-background: transparent;
+        --button-outline-danger-background-active: var(--palenight-red);
+        --button-outline-danger-background-hover: var(--palenight-red-dark);
+        --button-outline-danger-border: var(--palenight-red);
+        --button-outline-danger-border-active: var(--palenight-red);
+        --button-outline-danger-border-hover: var(--palenight-red-light);
+        --button-outline-danger-text: var(--palenight-red-light);
+        --button-outline-danger-text-active: var(--text-0);
+        --button-outline-danger-text-hover: var(--text-1);
+        --button-outline-positive-background: transparent;
+        --button-outline-positive-background-active: var(--palenight-green);
+        --button-outline-positive-background-hover: var(--palenight-green-dark);
+        --button-outline-positive-border: var(--palenight-green);
+        --button-outline-positive-border-active: var(--palenight-green);
+        --button-outline-positive-border-hover: var(--palenight-green-light);
+        --button-outline-positive-text: var(--palenight-green-light);
+        --button-outline-positive-text-active: var(--text-0);
+        --button-outline-positive-text-hover: var(--text-1);
+        --button-outline-primary-background: transparent;
+        --button-outline-primary-background-active: var(--bg-1);
+        --button-outline-primary-background-hover: var(--hover);
+        --button-outline-primary-border: var(--button-border);
+        --button-outline-primary-border-active: var(--text-2);
+        --button-outline-primary-border-hover: var(--text-3);
+        --button-outline-primary-text: var(--text-2);
+        --button-outline-primary-text-active: var(--text-1);
+        --button-outline-primary-text-hover: var(--text-1);
+        --button-positive-background: var(--palenight-green);
+        --button-positive-background-active: var(--palenight-green-dark);
+        --button-positive-background-disabled: var(--bg-1);
+        --button-positive-background-hover: var(--palenight-green-light);
+        --button-secondary-background: var(--bg-2);
+        --button-secondary-background-active: var(--bg-1);
+        --button-secondary-background-disabled: var(--bg-2);
+        --button-secondary-background-hover: var(--bg-1);
+
+        --card-gradient-bg: var(--bg-4);
+        --card-gradient-pressed-bg: var(--bg-3);
+        --card-primary-bg: var(--bg-4);
+        --card-primary-pressed-bg: var(--bg-3);
+        --card-secondary-bg: var(--bg-3);
+        --card-secondary-pressed-bg: var(--bg-2);
+        --channel-icon: var(--text-4);
+        --channel-text-area-placeholder: var(--text-4);
+        --channels-default: var(--text-4);
+        --channeltextarea-background: var(--bg-3);
+
+        --control-brand-foreground: var(--palenight-purple);
+        --control-brand-foreground-new: var(--palenight-purple);
+
+        --creator-revenue-icon-gradient-end: var(--palenight-cyan);
+        --creator-revenue-icon-gradient-start: var(--palenight-purple);
+        --creator-revenue-info-box-background: var(--bg-3);
+        --creator-revenue-info-box-border: var(--palenight-cyan);
+        --creator-revenue-locked-channel-icon: var(--text-4);
+        --creator-revenue-progress-bar: var(--palenight-cyan);
+
+        --deprecated-card-bg: var(--bg-3);
+        --deprecated-card-editable-bg: var(--bg-3);
+        --deprecated-quickswitcher-input-background: var(--bg-3);
+        --deprecated-quickswitcher-input-placeholder: var(--text-4);
+        --deprecated-store-bg: var(--bg-4);
+        --deprecated-text-input-bg: var(--bg-3);
+        --deprecated-text-input-border: var(--border);
+        --deprecated-text-input-border-disabled: var(--border-light);
+        --deprecated-text-input-border-hover: var(--text-4);
+        --deprecated-text-input-prefix: var(--text-3);
+
+        --display-banner-overflow-background: var(--bg-3);
+        --divider-strong: var(--border);
+        --divider-subtle: var(--border-light);
+
+        --embed-background: var(--bg-3);
+        --embed-background-alternate: var(--bg-3);
+        --embed-title: var(--text-1);
+
+        --expression-picker-bg: var(--bg-3);
+        --focus-primary: var(--palenight-purple);
+        --forum-post-extra-media-count-container-background: var(--bg-1);
+        --forum-post-tag-background: var(--active);
+
+        --guild-boosting-blue: var(--palenight-blue);
+        --guild-boosting-blue-for-gradients: var(--palenight-blue);
+        --guild-boosting-pink: var(--palenight-pink);
+        --guild-boosting-purple: var(--palenight-purple);
+        --guild-boosting-purple-for-gradients: var(--palenight-purple);
+
+        --header-muted: var(--text-4);
+        --header-primary: var(--text-1);
+        --header-secondary: var(--text-3);
+        --home-background: var(--bg-4);
+        --home-card-resting-border: var(--border);
+
+        --icon-muted: var(--text-4);
+        --icon-primary: var(--text-2);
+        --icon-secondary: var(--text-3);
+        --icon-transparent: transparent;
+
+        --info-box-background: var(--bg-3);
+        --info-danger-background: color-mix(in hsl, var(--palenight-red), transparent 90%);
+        --info-danger-foreground: var(--palenight-red-light);
+        --info-danger-text: var(--text-1);
+        --info-help-background: color-mix(in hsl, var(--palenight-blue), transparent 90%);
+        --info-help-foreground: var(--palenight-blue-light);
+        --info-help-text: var(--text-1);
+        --info-positive-background: color-mix(in hsl, var(--palenight-green), transparent 90%);
+        --info-positive-foreground: var(--palenight-green-light);
+        --info-positive-text: var(--text-1);
+        --info-warning-background: color-mix(in hsl, var(--palenight-yellow), transparent 90%);
+        --info-warning-foreground: var(--palenight-yellow);
+        --info-warning-text: var(--text-0);
+
+        --input-background: var(--bg-3);
+        --input-placeholder-text: var(--text-4);
+        --interactive-active: var(--text-1);
+        --interactive-hover: var(--text-2);
+        --interactive-muted: var(--text-4);
+        --interactive-normal: var(--text-3);
+
+        --legacy-android-blur-overlay-default: var(--bg-3);
+        --legacy-android-blur-overlay-ultra-thin: transparent;
+        --legacy-blur-fallback-default: var(--bg-3);
+        --legacy-blur-fallback-ultra-thin: transparent;
+
+        --live-stage-tile-border: var(--border);
+        --logo-primary: var(--palenight-purple-light);
+
+        --mention-background: var(--palenight-blue);
+        --mention-foreground: var(--palenight-blue-light);
+        --modal-background: var(--bg-4);
+        --modal-footer-background: var(--bg-3);
+
+        --polls-image-normal-border: var(--border);
+        --polls-normal-fill-hover: var(--hover);
+        --polls-normal-image-background: var(--bg-3);
+        --polls-victor-fill: var(--palenight-cyan);
+        --polls-voted-fill: var(--palenight-purple);
+
+        --profile-gradient-card-background: var(--bg-3);
+        --profile-gradient-message-input-border: var(--border);
+        --profile-gradient-note-background: var(--bg-3);
+        --profile-gradient-overlay: var(--bg-4);
+        --profile-gradient-overlay-synced-with-user-theme: var(--bg-4);
+        --profile-gradient-profile-body-background-hover: var(--hover);
+        --profile-gradient-role-pill-background: var(--active);
+        --profile-gradient-role-pill-border: var(--border);
+        --profile-gradient-section-box: var(--bg-3);
+
+        --redesign-activity-card-background: var(--bg-3);
+        --redesign-activity-card-background-pressed: var(--bg-2);
+        --redesign-activity-card-border: var(--border);
+        --redesign-activity-card-overflow-background: var(--bg-2);
+        --redesign-button-active-background: var(--bg-1);
+        --redesign-button-active-pressed-background: var(--bg-2);
+        --redesign-button-danger-background: var(--palenight-red);
+        --redesign-button-danger-pressed-background: var(--palenight-red-dark);
+        --redesign-button-danger-text: var(--text-0);
+        --redesign-button-overlay-alpha-background: color-mix(in hsl, var(--bg-4), transparent 50%);
+        --redesign-button-overlay-alpha-pressed-background: color-mix(in hsl, var(--bg-4), transparent 30%);
+        --redesign-button-overlay-alpha-text: var(--text-1);
+        --redesign-button-overlay-background: var(--bg-3);
+        --redesign-button-overlay-pressed-background: var(--bg-2);
+        --redesign-button-overlay-text: var(--text-2);
+        --redesign-button-positive-background: var(--palenight-green);
+        --redesign-button-positive-pressed-background: var(--palenight-green-dark);
+        --redesign-button-positive-text: var(--text-0);
+        --redesign-button-primary-alt-background: var(--bg-2);
+        --redesign-button-primary-alt-border: var(--border);
+        --redesign-button-primary-alt-on-blurple-background: color-mix(in hsl, var(--palenight-purple), transparent 80%);
+        --redesign-button-primary-alt-on-blurple-border: var(--palenight-purple-light);
+        --redesign-button-primary-alt-on-blurple-pressed-background: color-mix(in hsl, var(--palenight-purple), transparent 60%);
+        --redesign-button-primary-alt-on-blurple-pressed-border: var(--palenight-purple-light);
+        --redesign-button-primary-alt-on-blurple-text: var(--palenight-purple-light);
+        --redesign-button-primary-alt-pressed-background: var(--bg-1);
+        --redesign-button-primary-alt-pressed-border: var(--border);
+        --redesign-button-primary-alt-pressed-text: var(--text-1);
+        --redesign-button-primary-alt-text: var(--text-2);
+        --redesign-button-primary-background: var(--palenight-purple);
+        --redesign-button-primary-border: var(--palenight-purple);
+        --redesign-button-primary-overlay-background: color-mix(in hsl, var(--palenight-purple), transparent 20%);
+        --redesign-button-primary-overlay-pressed-background: var(--palenight-purple);
+        --redesign-button-primary-overlay-text: var(--palenight-purple-light);
+        --redesign-button-primary-pressed-background: var(--palenight-purple-dark);
+        --redesign-button-primary-pressed-border: var(--palenight-purple-dark);
+        --redesign-button-primary-text: var(--text-0);
+        --redesign-button-secondary-background: var(--bg-2);
+        --redesign-button-secondary-border: var(--border);
+        --redesign-button-secondary-overlay-background: color-mix(in hsl, var(--bg-4), transparent 40%);
+        --redesign-button-secondary-overlay-pressed-background: color-mix(in hsl, var(--bg-4), transparent 20%);
+        --redesign-button-secondary-overlay-text: var(--text-1);
+        --redesign-button-secondary-pressed-background: var(--bg-1);
+        --redesign-button-secondary-pressed-border: var(--border);
+        --redesign-button-secondary-text: var(--text-2);
+        --redesign-channel-category-name-text: var(--text-4);
+        --redesign-channel-message-preview-text: var(--text-4);
+        --redesign-channel-name-muted-text: var(--text-4);
+        --redesign-channel-name-text: var(--text-3);
+        --redesign-chat-input-background: var(--bg-3);
+        --redesign-input-control-active-bg: var(--palenight-purple);
+        --redesign-input-control-selected: var(--palenight-purple);
+        --redesign-only-background-active: var(--active);
+        --redesign-only-background-default: var(--bg-4);
+        --redesign-only-background-overlay: var(--bg-3);
+        --redesign-only-background-raised: var(--bg-2);
+        --redesign-only-background-sunken: var(--bg-4);
+
+        --scrollbar-auto-scrollbar-color-thumb: var(--bg-1);
+        --scrollbar-auto-scrollbar-color-track: transparent;
+        --scrollbar-auto-thumb: var(--bg-1);
+        --scrollbar-auto-track: transparent;
+        --scrollbar-thin-thumb: var(--bg-1);
+        --scrollbar-thin-track: transparent;
+
+        --spoiler-hidden-background: var(--bg-1);
+        --spoiler-revealed-background: var(--bg-2);
+        --status-danger: var(--palenight-red);
+        --status-danger-background: var(--palenight-red);
+        --status-danger-text: var(--text-0);
+        --status-dnd: var(--dnd);
+        --status-idle: var(--idle);
+        --status-offline: var(--offline);
+        --status-online: var(--online);
+        --status-positive: var(--palenight-green);
+        --status-positive-background: var(--palenight-green);
+        --status-positive-text: var(--text-0);
+        --status-speaking: var(--palenight-green);
+        --status-warning: var(--palenight-yellow);
+        --status-warning-background: var(--palenight-yellow);
+        --status-warning-text: var(--text-0);
+
+        --text-brand: var(--palenight-purple-light);
+        --text-danger: var(--palenight-red-light);
+        --text-link: var(--palenight-cyan);
+        --text-link-low-saturation: var(--palenight-blue);
+        --text-message-preview-low-sat: var(--text-3);
+        --text-muted: var(--text-4);
+        --text-muted-on-default: var(--text-3);
+        --text-normal: var(--text-3);
+        --text-positive: var(--palenight-green-light);
+        --text-primary: var(--text-1);
+        --text-secondary: var(--text-3);
+        --text-warning: var(--palenight-yellow);
+
+        --theme-locked-blur-fallback: var(--bg-3);
+        --toast-bg: var(--bg-3);
+        --toast-border: var(--border);
+        --user-profile-header-overflow-background: var(--bg-3);
+        --voice-video-video-tile-blur-fallback: var(--bg-3);
+
+        --white: var(--text-1);
+    }
+}
