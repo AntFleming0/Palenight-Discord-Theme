@@ -1094,6 +1094,11 @@ div[style='display: flex; justify-content: center; align-items: center; border-r
 /* CUSTOM LOADING SCREEN - Palenight            */
 /* ============================================= */
 
+/* Loading screen background - match Palenight theme */
+.appMount_fbb6aa {
+    background: var(--bg-4) !important;
+}
+
 .content_a2f514 {
     display: flex !important;
     flex-direction: column !important;
@@ -1253,30 +1258,63 @@ hr,
 /* BETTERDISCORD SETTINGS FIX                   */
 /* ============================================= */
 
-/* BetterDiscord settings titles (Themes, Plugins, etc.) */
+/* BetterDiscord settings container */
+#bd-settingspane-container {
+    background: var(--bg-4) !important;
+}
+
+/* BetterDiscord settings titles (Themes, Plugins, etc.) - FIX BLACK TEXT */
 #bd-settingspane-container h2,
 #bd-settingspane-container .bd-settings-title,
 .bd-settings-title,
 .bd-addon-list .bd-addon-header,
-.bd-settings-group h2 {
+.bd-settings-group h2,
+#bd-settingspane-container .bd-addon-views .bd-view-button.selected,
+.bd-addon-views .bd-view-button {
+    color: var(--text-1) !important;
+    background: transparent !important;
+}
+
+/* BetterDiscord view buttons hover */
+.bd-addon-views .bd-view-button:hover {
+    background: var(--hover) !important;
+}
+
+.bd-addon-views .bd-view-button.selected {
+    background: var(--active-2) !important;
     color: var(--text-0) !important;
 }
 
-/* BetterDiscord search bar */
-#bd-settingspane-container .bd-search-wrapper input,
-.bd-search-wrapper input,
-input[placeholder*="Search"],
-input[placeholder*="search"] {
+/* BetterDiscord search bar - FIX BLACK OUTLINE */
+#bd-settingspane-container .bd-search-wrapper,
+.bd-search-wrapper {
     background: var(--bg-3) !important;
-    color: var(--text-1) !important;
     border: var(--border-thickness) solid var(--border) !important;
     border-radius: var(--radius-sm) !important;
 }
 
+#bd-settingspane-container .bd-search-wrapper input,
+.bd-search-wrapper input,
+input[placeholder*="Search"],
+input[placeholder*="search"] {
+    background: transparent !important;
+    color: var(--text-1) !important;
+    border: none !important;
+    border-radius: var(--radius-sm) !important;
+}
+
 #bd-settingspane-container .bd-search-wrapper input:focus,
-.bd-search-wrapper input:focus {
+.bd-search-wrapper input:focus,
+#bd-settingspane-container .bd-search-wrapper:focus-within,
+.bd-search-wrapper:focus-within {
     border-color: var(--palenight-purple) !important;
     box-shadow: 0 0 0 2px var(--active-2) !important;
+    outline: none !important;
+}
+
+/* BetterDiscord search icon */
+.bd-search-wrapper svg {
+    color: var(--text-4) !important;
 }
 
 /* BetterDiscord addon cards */
@@ -1289,34 +1327,64 @@ input[placeholder*="search"] {
 /* BetterDiscord addon titles and descriptions */
 .bd-addon-card .bd-title,
 .bd-addon-card .bd-name {
-    color: var(--text-0) !important;
+    color: var(--text-1) !important;
 }
 
 .bd-addon-card .bd-description,
 .bd-addon-card .bd-description-wrap {
-    color: var(--text-1) !important;
+    color: var(--text-3) !important;
+}
+
+/* BetterDiscord addon authors and version */
+.bd-addon-card .bd-author,
+.bd-addon-card .bd-version {
+    color: var(--text-4) !important;
 }
 
 /* BetterDiscord switches */
 .bd-switch,
 .bd-switch-body {
     background: var(--bg-2) !important;
+    border: 1px solid var(--border) !important;
 }
 
 .bd-switch input:checked + .bd-switch-body {
     background: var(--palenight-purple) !important;
+    border-color: var(--palenight-purple) !important;
 }
+
+.bd-switch-handle {
+    background: var(--text-0) !important;
+}
+
+/* BetterDiscord buttons */
+.bd-button {
+    background: var(--active) !important;
+    color: var(--text-1) !important;
+    border: 1px solid var(--palenight-purple) !important;
+}
+
+.bd-button:hover {
+    background: var(--accent-4) !important;
+}
+
+.bd-button.bd-button-danger {
+    background: var(--palenight-red) !important;
+    border-color: var(--palenight-red) !important;
+}
+
 
 /* ============================================= */
 /* USER AREA POPUP (Bottom Left)                */
 /* ============================================= */
 
-/* User profile popout/menu */
+/* User profile popout/menu - FULL PALENIGHT THEME */
 .accountProfilePopoutWrapper__8f0de,
 [class*="accountProfilePopout"],
 .userPopout__590e2,
 .userPopoutOuter__390cb,
-[class*="userPopout"] {
+[class*="userPopout"],
+.profilePanel_c0bea0 {
     background: var(--bg-3) !important;
     border: 1px solid var(--border) !important;
     border-radius: var(--radius-md) !important;
@@ -1326,7 +1394,8 @@ input[placeholder*="search"] {
 .banner_c0bea0,
 .profileBanner__6e540,
 [class*="profileBanner"],
-.userProfileOuterThemed__81bfc {
+.userProfileOuterThemed__81bfc,
+.bannerSVGWrapper_a5e6c9 {
     background: var(--bg-2) !important;
 }
 
@@ -1334,41 +1403,96 @@ input[placeholder*="search"] {
 .profileBadges__6e540,
 .body_c0bea0,
 .userInfoSection__03c37,
-[class*="userInfo"] {
+[class*="userInfo"],
+.avatarWrapper_c0bea0,
+.avatarPositionPanel_c0bea0 {
     background: var(--bg-3) !important;
 }
 
-/* User profile text */
+/* User profile text - ensure visibility */
 .userText__56e23,
 .username__88cdb,
 .discriminator__70a7b,
 .profileBadges__6e540,
 [class*="bodyTitle"],
-[class*="textarea"] {
-    color: var(--text-0) !important;
+[class*="textarea"],
+.nameTag_c0bea0,
+.panelTitleContainer_c0bea0,
+.panelTitle_c0bea0,
+.panelSubtextContainer_c0bea0,
+.panelSubtext_c0bea0 {
+    color: var(--text-1) !important;
 }
 
 /* User profile buttons */
 .actionButtons_c0bea0,
 .actionButton__23cc6,
-[class*="actionButton"] button {
+[class*="actionButton"] button,
+.button_dd4f85 {
     background: var(--active) !important;
     color: var(--text-1) !important;
     border: 1px solid var(--palenight-purple) !important;
+    border-radius: var(--radius-sm) !important;
 }
 
 .actionButton__23cc6:hover,
-[class*="actionButton"] button:hover {
+[class*="actionButton"] button:hover,
+.button_dd4f85:hover {
     background: var(--accent-4) !important;
+    box-shadow: 0 0 8px var(--active-2) !important;
 }
 
 /* User profile sections/dividers */
 .userProfileOuter_c0bea0,
 .section__8f0de,
-[class*="section"] {
+[class*="section"],
+.customStatus_c0bea0,
+.note_c0bea0,
+.textarea_c0bea0 {
     background: var(--bg-3) !important;
     border-color: var(--border) !important;
+    color: var(--text-3) !important;
 }
+
+/* User profile input fields */
+.note_c0bea0 textarea,
+.textarea_c0bea0,
+.input_c0bea0 {
+    background: var(--bg-2) !important;
+    color: var(--text-1) !important;
+    border: 1px solid var(--border) !important;
+}
+
+.note_c0bea0 textarea:focus,
+.textarea_c0bea0:focus,
+.input_c0bea0:focus {
+    border-color: var(--palenight-purple) !important;
+    box-shadow: 0 0 0 2px var(--active-2) !important;
+}
+
+/* About Me and custom status text */
+.customStatusText_c0bea0,
+.markup_f8f345,
+.bio_c0bea0,
+.text_c0bea0 {
+    color: var(--text-3) !important;
+}
+
+/* Member since, roles, etc. */
+.profileBadges__6e540,
+.role_c0bea0,
+.roleDot_c0bea0,
+.memberSinceContainer_c0bea0,
+.listRowContent_a6b9c3 {
+    color: var(--text-3) !important;
+}
+
+/* Role pills */
+.role_c0bea0 {
+    background: var(--bg-2) !important;
+    border: 1px solid var(--border) !important;
+}
+
 
 /* Mention and @everyone tag styling for better readability - ONLY in messages */
 .message__5126c .mention /* mention in message */,
@@ -1380,6 +1504,151 @@ input[placeholder*="search"] {
     padding: 2px 4px !important;
     border-radius: 3px !important;
     font-weight: 600 !important;
+}
+
+/* ============================================= */
+/* STATUS INDICATORS - Palenight Colors         */
+/* ============================================= */
+
+/* Hide default Discord SVG status circles */
+.svg_cc5dd2 > mask,
+.svg__44b0c > rect,
+.svg__44b0c > circle,
+.svg__44b0c > g,
+.svg__44b0c rect[mask*='url'],
+.avatar__20a53 .status_a423bd rect {
+    display: none;
+}
+
+/* Remove mask from foreignObject elements */
+.mask__68edb > foreignObject,
+.svg__44b0c > foreignObject,
+.svg__2338f > foreignObject {
+    mask: none;
+}
+
+/* Custom status indicator setup with Palenight colors */
+.wrapper__44b0c,
+.container__1ce5d {
+    --online-custom: var(--online); /* #9CCC65 Palenight green */
+    --dnd-custom: var(--dnd); /* #EF5350 Palenight red */
+    --idle-custom: var(--idle); /* #FFCA28 Palenight yellow */
+    --offline-custom: var(--offline); /* #676E95 Palenight muted */
+    --streaming-custom: var(--streaming); /* #C792EA Palenight purple */
+}
+
+/* Create custom status indicators */
+.wrapper__44b0c:has(rect)::after,
+.container__1ce5d:has(.status_a423bd)::after {
+    content: '';
+    display: block;
+    position: absolute;
+    height: 10px;
+    width: 10px;
+    bottom: -2px;
+    right: -2px;
+    border: 2px solid var(--bg-3);
+    border-radius: 50%;
+    box-sizing: border-box;
+}
+
+/* Apply Palenight colors to each status */
+.wrapper__44b0c:has(rect[fill='#43a25a'])::after,
+.container__1ce5d:has(.status_a423bd[style*='rgb(67, 162, 90)'])::after {
+    background: var(--online-custom) !important;
+}
+
+.wrapper__44b0c:has(rect[fill='#d83a42'])::after,
+.container__1ce5d:has(.status_a423bd[style*='rgb(216, 58, 66)'])::after {
+    background: var(--dnd-custom) !important;
+}
+
+.wrapper__44b0c:has(rect[fill='#ca9654'])::after,
+.container__1ce5d:has(.status_a423bd[style*='rgb(202, 150, 84)'])::after {
+    background: var(--idle-custom) !important;
+}
+
+.wrapper__44b0c:has(rect[fill='#82838b'])::after,
+.wrapper__44b0c:has(rect[fill='#747f8d'])::after,
+.container__1ce5d:has(.status_a423bd[style*='rgb(130, 131, 139)'])::after,
+.container__1ce5d:has(.status_a423bd[style*='rgb(116, 127, 141)'])::after {
+    background: var(--offline-custom) !important;
+}
+
+.wrapper__44b0c:has(rect[fill='#9147ff'])::after,
+.container__1ce5d:has(.status_a423bd[style*='rgb(145, 71, 255)'])::after {
+    background: var(--streaming-custom) !important;
+}
+
+/* Status badges positioning */
+.lowerBadge_cc5dd2 {
+    border: 2px solid var(--bg-3);
+    bottom: -2px;
+    right: -2px;
+}
+
+.upperBadge_cc5dd2 {
+    border: 2px solid var(--bg-3);
+    top: -2px;
+    right: -2px;
+}
+
+/* ============================================= */
+/* FRIENDS LIST FIX - Remove Dark Backgrounds   */
+/* ============================================= */
+
+/* Remove dark background around users in friends list */
+.peopleColumn__133bf /* friends list column */,
+.peopleList__13e06 /* friends list container */ {
+    background: transparent !important;
+}
+
+/* Friends list items - blend with background */
+.peopleListItem_c6d4b9,
+[class*="peopleListItem"] {
+    background: transparent !important;
+    border: none !important;
+}
+
+/* Friends list item hover - subtle highlight */
+.peopleListItem_c6d4b9:hover,
+[class*="peopleListItem"]:hover {
+    background: var(--hover) !important;
+}
+
+/* Friends list user info area */
+.userInfo_c6d4b9,
+[class*="userInfo"] {
+    background: transparent !important;
+}
+
+/* Friends list actions area */
+.actions_c6d4b9,
+[class*="listItemActions"] {
+    background: transparent !important;
+}
+
+/* Pending requests and suggestions - also remove dark background */
+.listRow_a6b9c3,
+[class*="listRow"] {
+    background: transparent !important;
+}
+
+.listRow_a6b9c3:hover,
+[class*="listRow"]:hover {
+    background: var(--hover) !important;
+}
+
+/* Friends tab body */
+.tabBody__133bf {
+    background: transparent !important;
+}
+
+/* Friends search bar */
+.searchBar__3c9f8,
+[class*="searchBar"] {
+    background: var(--bg-3) !important;
+    border: 1px solid var(--border) !important;
 }
 body {
     --list-item-transition: 0.2s ease; /* transition for list items */
