@@ -2,7 +2,7 @@
 
 A beautiful BetterDiscord theme inspired by VSCode's Palenight (mild contrast) color scheme. This theme brings the elegant and eye-comfortable colors of VSCode's popular Palenight theme to Discord.
 
-![Theme Preview](https://img.shields.io/badge/version-1.0.0-C792EA?style=for-the-badge) ![BetterDiscord](https://img.shields.io/badge/BetterDiscord-Compatible-82AAFF?style=for-the-badge)
+![Theme Preview](https://img.shields.io/badge/version-1.1.0-C792EA?style=for-the-badge) ![BetterDiscord](https://img.shields.io/badge/BetterDiscord-Compatible-82AAFF?style=for-the-badge)
 
 ## ✨ Features
 

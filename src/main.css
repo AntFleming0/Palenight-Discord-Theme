@@ -1288,3 +1288,657 @@ input[placeholder*="search"] {
     background: var(--bg-3) !important;
     border: 1px solid var(--border) !important;
 }
+
+/* ============================================= */
+/* FRIENDS/NITRO NAVIGATION TABS FIX           */
+/* ============================================= */
+
+/* Navigation tab buttons (Friends, Nitro, Shop, etc.) - FIX PURPLE HIGHLIGHT BUG */
+.topPill__3a1d0,
+[class*="topPill"],
+.item__59774,
+[class*="item"][class*="_59774"],
+[class*="item"][class*="themed"] {
+    color: var(--text-3) !important;
+    background: transparent !important;
+    border-radius: var(--radius-sm) !important;
+    transition: background 0.15s ease, color 0.15s ease !important;
+}
+
+/* Navigation tab buttons hover */
+.topPill__3a1d0:hover,
+[class*="topPill"]:hover,
+.item__59774:hover,
+[class*="item"][class*="_59774"]:hover,
+[class*="item"][class*="themed"]:hover {
+    color: var(--text-1) !important;
+    background: var(--hover) !important;
+}
+
+/* Navigation tab buttons selected - CRITICAL: Ensure only ONE tab shows as selected */
+.topPill__3a1d0.selected__3a1d0,
+[class*="topPill"][class*="selected"],
+.item__59774.selected__59774,
+[class*="item"][class*="_59774"][class*="selected"],
+[class*="item"][class*="themed"][class*="selected"],
+.themed_c7dc0c.selected_c7dc0c,
+[class*="themed"][class*="selected"] {
+    color: var(--text-0) !important;
+    background: var(--active) !important; /* Palenight purple background */
+}
+
+/* Navigation tab buttons active (click state) - prevent double purple */
+.topPill__3a1d0:active,
+[class*="topPill"]:active,
+.item__59774:active,
+[class*="item"][class*="_59774"]:active,
+[class*="item"][class*="themed"]:active {
+    color: var(--text-0) !important;
+    background: var(--accent-5) !important; /* Slightly darker purple on click */
+    transition: none !important; /* Instant feedback */
+}
+
+/* Ensure selected tab ONLY has purple when it's the current page */
+.topPill__3a1d0:not(.selected__3a1d0),
+[class*="topPill"]:not([class*="selected"]),
+.item__59774:not(.selected__59774),
+[class*="item"][class*="_59774"]:not([class*="selected"]),
+[class*="item"][class*="themed"]:not([class*="selected"]) {
+    background: transparent !important;
+    color: var(--text-3) !important;
+}
+
+/* Fix navigation tab bar container */
+.top__9293f,
+[class*="top"][class*="__9293f"],
+[class*="topSection"] {
+    background: transparent !important;
+}
+
+/* Fix tab bar background */
+.tabBar_c7dc0c,
+[class*="tabBar"] {
+    background: transparent !important;
+}
+
+/* Navigation divider */
+.divider__3f7c5,
+[class*="divider"][class*="__3f7c5"] {
+    background: var(--border) !important;
+}
+
+/* ============================================= */
+/* COMPREHENSIVE DISCORD UI COVERAGE           */
+/* ============================================= */
+
+/* ===== MODALS & POPUPS ===== */
+.modal__6cf44,
+.root__84a48,
+[class*="modal"],
+[class*="Modal"] {
+    background: var(--bg-3) !important;
+    border: 1px solid var(--border) !important;
+    border-radius: var(--radius-lg) !important;
+}
+
+.header__6e864,
+.headerNormal__7c60b,
+[class*="modalHeader"],
+[class*="ModalHeader"] {
+    background: var(--bg-2) !important;
+    color: var(--text-1) !important;
+    border-bottom: 1px solid var(--border) !important;
+}
+
+.content__9e29e,
+.modalContent__08434,
+[class*="modalContent"],
+[class*="ModalContent"] {
+    background: var(--bg-3) !important;
+    color: var(--text-3) !important;
+}
+
+.footer__7cb1c,
+.modalFooter__08434,
+[class*="modalFooter"],
+[class*="ModalFooter"] {
+    background: var(--bg-2) !important;
+    border-top: 1px solid var(--border) !important;
+}
+
+/* ===== CONTEXT MENUS ===== */
+.menu__60522,
+.scroller__88fe2,
+[class*="menu"],
+[class*="Menu"],
+[class*="contextMenu"] {
+    background: var(--bg-3) !important;
+    border: 1px solid var(--border) !important;
+    border-radius: var(--radius-md) !important;
+}
+
+.item__8e93a,
+.colorDefault__0c080,
+[class*="menuItem"],
+[class*="MenuItem"] {
+    color: var(--text-3) !important;
+    background: transparent !important;
+    border-radius: var(--radius-sm) !important;
+}
+
+.item__8e93a:hover,
+.colorDefault__0c080:hover,
+[class*="menuItem"]:hover,
+[class*="MenuItem"]:hover {
+    color: var(--text-1) !important;
+    background: var(--hover) !important;
+}
+
+.colorDanger_ed0d3f:hover {
+    background: var(--palenight-red) !important;
+    color: var(--text-0) !important;
+}
+
+/* ===== EMOJI PICKER ===== */
+.emojiPicker__3d5a9,
+.container__6b6e7,
+[class*="emojiPicker"],
+[class*="EmojiPicker"] {
+    background: var(--bg-3) !important;
+    border: 1px solid var(--border) !important;
+    border-radius: var(--radius-lg) !important;
+}
+
+.header_a6aec0,
+.searchBar__088a5,
+[class*="emojiPickerHeader"],
+[class*="emojiPickerSearch"] {
+    background: var(--bg-2) !important;
+    border-bottom: 1px solid var(--border) !important;
+}
+
+.emojiItem__86dce,
+[class*="emojiItem"] {
+    border-radius: var(--radius-sm) !important;
+}
+
+.emojiItem__86dce:hover,
+[class*="emojiItem"]:hover {
+    background: var(--hover) !important;
+}
+
+.emojiItemSelected__86dce,
+[class*="emojiItemSelected"] {
+    background: var(--active-2) !important;
+}
+
+.categorySection__9ee40,
+[class*="categorySection"] {
+    color: var(--text-4) !important;
+}
+
+/* ===== VOICE/VIDEO CONTROLS ===== */
+.container_c38106,
+.panels__5e434,
+[class*="voiceControls"],
+[class*="VoiceControls"] {
+    background: var(--bg-3) !important;
+}
+
+.button__23e46,
+.actionButton_c38106,
+[class*="voiceButton"],
+[class*="VoiceButton"] {
+    color: var(--text-3) !important;
+    background: transparent !important;
+    border-radius: var(--radius-sm) !important;
+}
+
+.button__23e46:hover,
+.actionButton_c38106:hover,
+[class*="voiceButton"]:hover,
+[class*="VoiceButton"]:hover {
+    color: var(--text-1) !important;
+    background: var(--hover) !important;
+}
+
+/* Voice/Video - Active/Muted states */
+.speaking_c38106,
+[class*="speaking"] {
+    box-shadow: inset 0 0 0 2px var(--palenight-green) !important;
+}
+
+.fauxDisabled__23e46,
+[class*="fauxDisabled"] {
+    color: var(--palenight-red) !important;
+}
+
+/* ===== REACTIONS ===== */
+.reaction__23977,
+.reactionBtn__23977,
+[class*="reaction"],
+[class*="Reaction"] {
+    background: var(--bg-2) !important;
+    border: 1px solid var(--border) !important;
+    border-radius: var(--radius-sm) !important;
+    color: var(--text-3) !important;
+}
+
+.reaction__23977:hover,
+.reactionBtn__23977:hover,
+[class*="reaction"]:hover,
+[class*="Reaction"]:hover {
+    background: var(--hover) !important;
+    border-color: var(--palenight-purple) !important;
+}
+
+.reactionMe__23977,
+[class*="reactionMe"] {
+    background: var(--active-2) !important;
+    border-color: var(--palenight-purple) !important;
+}
+
+/* ===== NOTIFICATIONS & BADGES ===== */
+.numberBadge__6a679,
+.mentionsBadge__6a679,
+[class*="numberBadge"],
+[class*="mentionsBadge"] {
+    background: var(--palenight-red) !important;
+    color: var(--text-0) !important;
+}
+
+.unread__6a679,
+[class*="unreadBadge"] {
+    background: var(--text-4) !important;
+}
+
+/* ===== TOOLTIPS ===== */
+.tooltip__99ffc,
+[class*="tooltip"],
+[class*="Tooltip"] {
+    background: var(--bg-2) !important;
+    color: var(--text-1) !important;
+    border: 1px solid var(--border) !important;
+    border-radius: var(--radius-sm) !important;
+}
+
+/* ===== AUTOCOMPLETE (Mentions, Emojis, Commands) ===== */
+.autocomplete_cd9e36,
+.autocompleteRowVertical_cd9e36,
+[class*="autocomplete"],
+[class*="Autocomplete"] {
+    background: var(--bg-3) !important;
+    border: 1px solid var(--border) !important;
+    border-radius: var(--radius-md) !important;
+}
+
+.autocompleteRowVertical_cd9e36,
+[class*="autocompleteRow"] {
+    background: transparent !important;
+}
+
+.autocompleteRowVertical_cd9e36:hover,
+[class*="autocompleteRow"]:hover {
+    background: var(--hover) !important;
+}
+
+.selectorSelected_cd9e36,
+[class*="selectorSelected"] {
+    background: var(--active-2) !important;
+}
+
+/* ===== SEARCH RESULTS ===== */
+.searchResult__8632f,
+.searchResultGroup__8632f,
+[class*="searchResult"],
+[class*="SearchResult"] {
+    background: var(--bg-3) !important;
+    border: 1px solid var(--border) !important;
+    border-radius: var(--radius-md) !important;
+}
+
+.searchResult__8632f:hover,
+[class*="searchResult"]:hover {
+    background: var(--bg-2) !important;
+}
+
+.searchResultsWrap_a9e706 {
+    background: var(--background-base-lower) !important;
+}
+
+/* ===== THREADS & FORUMS ===== */
+.container_f369db,
+.card_f369db,
+[class*="forumPost"],
+[class*="threadCard"] {
+    background: var(--bg-3) !important;
+    border: 1px solid var(--border) !important;
+    border-radius: var(--radius-md) !important;
+}
+
+.card_f369db:hover,
+[class*="forumPost"]:hover,
+[class*="threadCard"]:hover {
+    background: var(--bg-2) !important;
+    border-color: var(--palenight-purple) !important;
+}
+
+/* ===== SLIDERS & SWITCHES ===== */
+.slider__5e12d,
+[class*="slider"] {
+    background: var(--bg-2) !important;
+}
+
+.sliderBar__89e8e,
+[class*="sliderBar"] {
+    background: var(--palenight-purple) !important;
+}
+
+/* Switches */
+input[type="checkbox"] + div,
+.checkbox__3cb18,
+[class*="checkbox"],
+[class*="switch"] {
+    background: var(--bg-2) !important;
+    border: 1px solid var(--border) !important;
+}
+
+input[type="checkbox"]:checked + div,
+.checkbox__3cb18.checked__3cb18,
+[class*="checkbox"][class*="checked"],
+[class*="switch"][class*="checked"] {
+    background: var(--palenight-purple) !important;
+    border-color: var(--palenight-purple) !important;
+}
+
+/* ===== DROPDOWNS & SELECT MENUS ===== */
+.select__12ed3,
+.selectControl__8d267,
+[class*="select"],
+[class*="Select"] {
+    background: var(--bg-2) !important;
+    color: var(--text-1) !important;
+    border: 1px solid var(--border) !important;
+    border-radius: var(--radius-sm) !important;
+}
+
+.selectOption__8d267,
+[class*="selectOption"] {
+    background: var(--bg-3) !important;
+    color: var(--text-3) !important;
+}
+
+.selectOption__8d267:hover,
+[class*="selectOption"]:hover {
+    background: var(--hover) !important;
+    color: var(--text-1) !important;
+}
+
+/* ===== SCROLLBARS ===== */
+::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-4) !important;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--bg-1) !important;
+    border-radius: var(--radius-sm) !important;
+    border: 2px solid var(--bg-4) !important;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--bg-2) !important;
+}
+
+/* ===== NOTICE BANNERS ===== */
+.notice__6e2b9,
+[class*="notice"],
+[class*="Notice"] {
+    background: var(--bg-2) !important;
+    color: var(--text-1) !important;
+    border: 1px solid var(--border) !important;
+}
+
+.noticeInfo,
+[class*="noticeInfo"] {
+    background: var(--palenight-blue) !important;
+}
+
+.noticeWarning,
+[class*="noticeWarning"] {
+    background: var(--palenight-yellow) !important;
+}
+
+.noticeError,
+[class*="noticeError"] {
+    background: var(--palenight-red) !important;
+}
+
+/* ===== VIDEO/SCREEN SHARE ===== */
+.tile_cb9592,
+.video_cb9592,
+[class*="videoTile"],
+[class*="Video"] {
+    background: var(--bg-4) !important;
+    border: 1px solid var(--border) !important;
+    border-radius: var(--radius-md) !important;
+}
+
+.pictureInPictureVideo_cb9592,
+[class*="pictureInPicture"] {
+    border: 2px solid var(--palenight-purple) !important;
+}
+
+/* ===== STAGE CHANNELS ===== */
+.container__722ff,
+[class*="stageContainer"] {
+    background: var(--bg-3) !important;
+}
+
+.audienceContainer__722ff,
+[class*="audienceContainer"] {
+    background: var(--bg-4) !important;
+}
+
+/* ===== INVITE/LINK CARDS ===== */
+.wrapper__9293f,
+.invite__9293f,
+[class*="inviteCard"],
+[class*="guildCard"] {
+    background: var(--bg-3) !important;
+    border: 1px solid var(--border) !important;
+    border-radius: var(--radius-md) !important;
+}
+
+.wrapper__9293f:hover,
+.invite__9293f:hover,
+[class*="inviteCard"]:hover {
+    background: var(--bg-2) !important;
+    border-color: var(--palenight-purple) !important;
+}
+
+/* ===== CODE BLOCKS ===== */
+.hljs,
+code,
+pre {
+    background: var(--bg-2) !important;
+    color: var(--text-3) !important;
+    border: 1px solid var(--border) !important;
+    border-radius: var(--radius-md) !important;
+}
+
+/* Code syntax highlighting - Palenight colors */
+.hljs-keyword,
+.hljs-selector-tag {
+    color: var(--palenight-purple) !important;
+}
+
+.hljs-string,
+.hljs-attr {
+    color: var(--palenight-green) !important;
+}
+
+.hljs-number,
+.hljs-literal {
+    color: var(--palenight-orange) !important;
+}
+
+.hljs-function,
+.hljs-title {
+    color: var(--palenight-yellow) !important;
+}
+
+.hljs-comment {
+    color: var(--text-5) !important;
+    font-style: italic;
+}
+
+.hljs-variable,
+.hljs-name {
+    color: var(--palenight-blue) !important;
+}
+
+/* ===== ACTIVITY CARDS (Spotify, Games, etc.) ===== */
+.activityPanel__45e1c,
+.activity__46207,
+[class*="activityCard"],
+[class*="Activity"] {
+    background: var(--bg-3) !important;
+    border: 1px solid var(--border) !important;
+    border-radius: var(--radius-md) !important;
+}
+
+.activityName__5d60b,
+[class*="activityName"] {
+    color: var(--text-1) !important;
+}
+
+.activityDetails__5d60b,
+[class*="activityDetails"] {
+    color: var(--text-3) !important;
+}
+
+/* Spotify specific */
+.playingIcon__46207,
+[class*="spotifyIcon"] {
+    color: var(--palenight-green) !important;
+}
+
+/* ===== DATE DIVIDERS ===== */
+.divider__908e2,
+[class*="dateDivider"] {
+    color: var(--text-4) !important;
+}
+
+.content__908e2 {
+    background: var(--bg-4) !important;
+    color: var(--text-4) !important;
+}
+
+/* ===== BLOCKED MESSAGES ===== */
+.groupStart__908e2,
+[class*="blockedMessage"] {
+    background: var(--bg-2) !important;
+    border: 1px solid var(--border) !important;
+    border-radius: var(--radius-md) !important;
+}
+
+/* ===== SYSTEM MESSAGES ===== */
+.systemMessage__5126c,
+[class*="systemMessage"] {
+    background: transparent !important;
+    color: var(--text-4) !important;
+}
+
+.timestamp__5126c {
+    color: var(--text-5) !important;
+}
+
+/* ===== LOADING INDICATORS ===== */
+.spinner__76e51,
+[class*="spinner"],
+[class*="Spinner"] {
+    color: var(--palenight-purple) !important;
+}
+
+/* ============================================= */
+/* FRIENDS/NITRO NAVIGATION TABS FIX           */
+/* ============================================= */
+
+/* Navigation tab buttons (Friends, Nitro, Shop, etc.) - FIX PURPLE HIGHLIGHT BUG */
+.topPill__3a1d0,
+[class*="topPill"],
+.item__59774,
+[class*="item"][class*="_59774"],
+[class*="item"][class*="themed"] {
+    color: var(--text-3) !important;
+    background: transparent !important;
+    border-radius: var(--radius-sm) !important;
+    transition: background 0.15s ease, color 0.15s ease !important;
+}
+
+/* Navigation tab buttons hover */
+.topPill__3a1d0:hover,
+[class*="topPill"]:hover,
+.item__59774:hover,
+[class*="item"][class*="_59774"]:hover,
+[class*="item"][class*="themed"]:hover {
+    color: var(--text-1) !important;
+    background: var(--hover) !important;
+}
+
+/* Navigation tab buttons selected - CRITICAL: Ensure only ONE tab shows as selected */
+.topPill__3a1d0.selected__3a1d0,
+[class*="topPill"][class*="selected"],
+.item__59774.selected__59774,
+[class*="item"][class*="_59774"][class*="selected"],
+[class*="item"][class*="themed"][class*="selected"],
+.themed_c7dc0c.selected_c7dc0c,
+[class*="themed"][class*="selected"] {
+    color: var(--text-0) !important;
+    background: var(--active) !important; /* Palenight purple background */
+}
+
+/* Navigation tab buttons active (click state) - prevent double purple */
+.topPill__3a1d0:active,
+[class*="topPill"]:active,
+.item__59774:active,
+[class*="item"][class*="_59774"]:active,
+[class*="item"][class*="themed"]:active {
+    color: var(--text-0) !important;
+    background: var(--accent-5) !important; /* Slightly darker purple on click */
+    transition: none !important; /* Instant feedback */
+}
+
+/* Ensure selected tab ONLY has purple when it's the current page */
+.topPill__3a1d0:not(.selected__3a1d0),
+[class*="topPill"]:not([class*="selected"]),
+.item__59774:not(.selected__59774),
+[class*="item"][class*="_59774"]:not([class*="selected"]),
+[class*="item"][class*="themed"]:not([class*="selected"]) {
+    background: transparent !important;
+    color: var(--text-3) !important;
+}
+
+/* Fix navigation tab bar container */
+.top__9293f,
+[class*="top"][class*="__9293f"],
+[class*="topSection"] {
+    background: transparent !important;
+}
+
+/* Fix tab bar background */
+.tabBar_c7dc0c,
+[class*="tabBar"] {
+    background: transparent !important;
+}
+
+/* Navigation divider */
+.divider__3f7c5,
+[class*="divider"][class*="__3f7c5"] {
+    background: var(--border) !important;
+}

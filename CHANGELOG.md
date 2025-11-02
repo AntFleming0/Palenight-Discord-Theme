@@ -1,8 +1,59 @@
 # Changelog
 
-All notable changes to the VSCode Palenight BetterDiscord theme will be documented in this file.
+All notable changes to the VSCode Palenight BetterDiscord Theme will be documented in this file.
 
-## [1.0.0] - 2024-11-01
+## [1.1.0] - 2025-11-02
+
+### 🐛 Fixed
+- **Navigation Tab Bug**: Fixed Friends/Nitro navigation tabs showing purple highlight incorrectly
+  - Resolved issue where clicking Friends showed purple, then clicking Nitro would make both light up purple
+  - Navigation tabs now properly show selected state only on the active tab
+  - Added proper transition states to prevent visual glitches
+
+### ✨ Added - Comprehensive Discord UI Coverage
+- **Modals & Popups**: Full Palenight theming for all modal dialogs
+- **Context Menus**: Right-click menus now use theme colors throughout
+- **Emoji Picker**: Complete Palenight styling for emoji/GIF picker
+- **Voice/Video Controls**: All voice channel and video call UI elements themed
+- **Reactions**: Message reactions styled with theme colors
+- **Notifications & Badges**: Unread badges and mentions use Palenight red
+- **Tooltips**: All tooltips match the theme style
+- **Autocomplete**: Mention/emoji/command autocomplete fully themed
+- **Search Results**: Global search results styled consistently
+- **Threads & Forums**: Forum posts and thread cards themed
+- **Sliders & Switches**: Form controls use Palenight purple
+- **Dropdowns & Select Menus**: All dropdown menus themed
+- **Scrollbars**: Custom scrollbar styling with theme colors
+- **Notice Banners**: Info/warning/error banners themed appropriately
+- **Video/Screen Share**: Video tiles and screen sharing UI themed
+- **Stage Channels**: Stage channel interface fully themed
+- **Invite/Link Cards**: Server invite cards styled with theme
+- **Code Blocks**: Syntax highlighting with Palenight colors
+  - Keywords: Purple
+  - Strings: Green  
+  - Numbers: Orange
+  - Functions: Yellow
+  - Comments: Muted gray (italic)
+  - Variables: Blue
+- **Activity Cards**: Spotify and game activity cards themed
+- **Date Dividers**: Chat date separators styled
+- **Blocked Messages**: Blocked message styling
+- **System Messages**: System notifications themed
+- **Loading Indicators**: Loading spinners use Palenight purple
+
+### 🎨 Improved
+- Enhanced color consistency across all Discord UI elements
+- Better visual feedback for interactive elements
+- Improved contrast for better readability
+- More VSCode-accurate color implementation
+
+### 📝 Technical Details
+- Added 600+ lines of comprehensive UI styling
+- Fixed navigation state management with proper CSS specificity
+- Ensured all Discord class selectors covered with fallback patterns
+- Build process verified and working correctly
+
+## [1.0.0] - 2025-11-01
 
 ### Added
 
