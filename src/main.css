@@ -236,7 +236,7 @@ body {
     .activity__46207,
     [class*="itemCard"],
     [class*="activity"] {
-        background: var(--bg-2) !important;
+        background: var(--bg-3) !important; /* Use darker background instead of bg-2 */
         border: 1px solid var(--border) !important;
         border-radius: var(--radius-md) !important;
     }
@@ -267,9 +267,27 @@ body {
     .homeWrapper__0920e /* nitro page group inner */ {
         border: none;
         background: none;
+        overflow: visible !important; /* Allow content to be visible */
     }
     .applicationStore_f07d62 /* nitro page group outer */ {
         background: none;
+        overflow: visible !important; /* Prevent clipping */
+    }
+
+    /* Fix Nitro page navigation tabs being covered */
+    .scroller_c880e8 /* nitro page scroller */ {
+        overflow: visible !important;
+    }
+
+    /* Ensure Gift Nitro button and navigation aren't covered by window controls */
+    .homeWrapper__0920e > .container__9293f /* nitro titlebar */ {
+        z-index: 1 !important; /* Stay below window controls */
+    }
+
+    /* Add padding to prevent Gift Nitro button from being covered */
+    .premiumCtaWrapper__75aa5,
+    [class*="premiumCta"] {
+        margin-right: 120px !important; /* Space for inbox + window controls */
     }
 
     .shop__6db1d /* shop */ {
@@ -1058,22 +1076,41 @@ input[placeholder*="search"] {
     color: var(--text-1) !important;
 }
 
-/* User profile buttons */
+/* User profile buttons - PROFESSIONAL LOOK */
 .actionButtons_c0bea0,
 .actionButton__23cc6,
 [class*="actionButton"] button,
+.profilePanelButton__92e31,
+[class*="profilePanelButton"],
 .button_dd4f85 {
-    background: var(--active) !important;
+    background: var(--bg-2) !important; /* Subtle dark background */
     color: var(--text-1) !important;
-    border: 1px solid var(--palenight-purple) !important;
+    border: 1px solid var(--border) !important; /* Subtle border, not purple */
     border-radius: var(--radius-sm) !important;
+    transition: all 0.2s ease !important;
+    box-shadow: none !important; /* Remove default shadow */
 }
 
 .actionButton__23cc6:hover,
 [class*="actionButton"] button:hover,
+.profilePanelButton__92e31:hover,
+[class*="profilePanelButton"]:hover,
 .button_dd4f85:hover {
-    background: var(--accent-4) !important;
-    box-shadow: 0 0 8px var(--active-2) !important;
+    background: var(--bg-1) !important; /* Lighter on hover */
+    border-color: var(--palenight-purple) !important; /* Purple border on hover */
+    box-shadow: 0 0 8px var(--active-2) !important; /* Subtle glow on hover */
+    color: var(--text-0) !important;
+}
+
+/* Active/pressed state */
+.actionButton__23cc6:active,
+[class*="actionButton"] button:active,
+.profilePanelButton__92e31:active,
+[class*="profilePanelButton"]:active,
+.button_dd4f85:active {
+    background: var(--active) !important;
+    border-color: var(--palenight-purple) !important;
+    transform: scale(0.98);
 }
 
 /* User profile sections/dividers */
@@ -1254,9 +1291,17 @@ input[placeholder*="search"] {
     background: var(--hover) !important;
 }
 
-/* Friends list user info area */
+/* Friends list user info area - ensure dark background */
 .userInfo_c6d4b9,
-[class*="userInfo"] {
+[class*="userInfo"],
+[class*="peopleListItem"] [class*="listItemContents"],
+.listItemContents_c6d4b9 {
+    background: transparent !important;
+}
+
+/* Friends list sub-containers - force dark background */
+[class*="peopleListItem"] > div,
+.peopleListItem_c6d4b9 > div {
     background: transparent !important;
 }
 
@@ -1365,6 +1410,89 @@ input[placeholder*="search"] {
 .divider__3f7c5,
 [class*="divider"][class*="__3f7c5"] {
     background: var(--border) !important;
+}
+
+/* ===== NITRO PAGE SPECIFIC FIXES ===== */
+
+/* Nitro page navigation items (Home, What's New, etc.) */
+.homeWrapper__0920e .item__59774,
+.homeWrapper__0920e [class*="item"][class*="_59774"],
+.homeWrapper__0920e .topPill__3a1d0,
+.homeWrapper__0920e [class*="topPill"] {
+    background: transparent !important;
+    color: var(--text-3) !important;
+}
+
+.homeWrapper__0920e .item__59774:hover,
+.homeWrapper__0920e [class*="item"][class*="_59774"]:hover,
+.homeWrapper__0920e .topPill__3a1d0:hover,
+.homeWrapper__0920e [class*="topPill"]:hover {
+    background: var(--hover) !important;
+    color: var(--text-1) !important;
+}
+
+.homeWrapper__0920e .item__59774.selected__59774,
+.homeWrapper__0920e [class*="item"][class*="_59774"][class*="selected"],
+.homeWrapper__0920e .topPill__3a1d0.selected__3a1d0,
+.homeWrapper__0920e [class*="topPill"][class*="selected"] {
+    background: var(--active) !important;
+    color: var(--text-0) !important;
+}
+
+/* Nitro page content areas */
+.pageWrapper_c880e8,
+[class*="pageWrapper"] {
+    background: transparent !important;
+}
+
+/* Nitro cards and sections */
+.homeWrapper__0920e .card_c880e8,
+.homeWrapper__0920e [class*="card"] {
+    background: var(--bg-3) !important;
+    border: 1px solid var(--border) !important;
+}
+
+/* ===== READALLNOTIFICATIONS PLUGIN COMPATIBILITY ===== */
+
+/* Fix ReadAllNotifications button styling */
+#readAllNotificationsButton,
+[class*="readallnotificationsbutton"],
+.bd-button[onclick*="readAll"],
+button[aria-label*="Read All"] {
+    background: var(--bg-2) !important;
+    color: var(--text-1) !important;
+    border: 1px solid var(--border) !important;
+    border-radius: var(--radius-sm) !important;
+    padding: 6px 12px !important;
+    font-size: 13px !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    max-width: 150px !important;
+    height: auto !important;
+    min-height: 32px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    transition: all 0.2s ease !important;
+}
+
+#readAllNotificationsButton:hover,
+[class*="readallnotificationsbutton"]:hover,
+.bd-button[onclick*="readAll"]:hover {
+    background: var(--bg-1) !important;
+    border-color: var(--palenight-purple) !important;
+    color: var(--text-0) !important;
+    box-shadow: 0 0 8px var(--active-2) !important;
+}
+
+/* ReadAll button text fix */
+#readAllNotificationsButton span,
+[class*="readallnotificationsbutton"] span {
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+    max-width: 100% !important;
 }
 
 /* ============================================= */
@@ -1492,17 +1620,19 @@ input[placeholder*="search"] {
     color: var(--text-3) !important;
     background: transparent !important;
     border-radius: var(--radius-sm) !important;
+    transition: all 0.2s ease !important; /* Smooth transition for hover effects */
 }
 
 .button__23e46:hover,
 .actionButton_c38106:hover,
 [class*="voiceButton"]:hover,
 [class*="VoiceButton"]:hover {
-    color: var(--text-1) !important;
-    background: var(--hover) !important;
+    color: var(--text-0) !important; /* Brighter text on hover */
+    background: var(--hover) !important; /* Subtle background highlight */
+    box-shadow: 0 0 8px var(--active-2) !important; /* Glow effect like settings */
 }
 
-/* Voice/Video - Active/Muted states */
+/* Voice/Video - Active/Muted states with enhanced hover */
 .speaking_c38106,
 [class*="speaking"] {
     box-shadow: inset 0 0 0 2px var(--palenight-green) !important;
@@ -1511,6 +1641,43 @@ input[placeholder*="search"] {
 .fauxDisabled__23e46,
 [class*="fauxDisabled"] {
     color: var(--palenight-red) !important;
+}
+
+/* Mute/Deafen buttons - light up on hover like settings */
+.fauxDisabled__23e46:hover,
+[class*="fauxDisabled"]:hover {
+    color: var(--palenight-red-light) !important;
+    background: rgba(239, 83, 80, 0.1) !important; /* Red glow */
+    box-shadow: 0 0 8px rgba(239, 83, 80, 0.3) !important;
+}
+
+/* Voice control dropdown buttons */
+.popoutOpen_c38106,
+[class*="popoutOpen"] {
+    background: var(--active-2) !important;
+}
+
+/* Voice control dropdown menus */
+.menu_c38106,
+[class*="voiceControlMenu"] {
+    background: var(--bg-3) !important;
+    border: 1px solid var(--border) !important;
+    border-radius: var(--radius-md) !important;
+}
+
+/* Voice control dropdown menu items */
+.menu_c38106 .item__8e93a,
+[class*="voiceControlMenu"] [class*="menuItem"] {
+    color: var(--text-3) !important;
+    background: transparent !important;
+    transition: all 0.2s ease !important;
+}
+
+.menu_c38106 .item__8e93a:hover,
+[class*="voiceControlMenu"] [class*="menuItem"]:hover {
+    color: var(--text-1) !important;
+    background: var(--hover) !important;
+    box-shadow: 0 0 4px var(--active-2) !important; /* Subtle glow on menu item hover */
 }
 
 /* ===== REACTIONS ===== */
