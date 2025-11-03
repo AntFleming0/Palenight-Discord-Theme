@@ -13,7 +13,7 @@ body {
     container-name: body;
 
     /* font, change to '' for default discord font */
-    --font: 'figtree';
+    --font: 'Inter';
     --code-font: '';
 
     /* sizes */
@@ -638,19 +638,19 @@ body {
 }
 
 :root {
-    /* text colors - Based on Palenight */
-    --text-0: #292D3E; /* text on colored elements */
-    --text-1: #EEFFFF; /* other normally white text */
-    --text-2: #BFC7D5; /* headings and important text */
-    --text-3: #89DDFF; /* normal text */
-    --text-4: #6C739A; /* icon buttons and channels */
+    /* text colors - Based on Palenight (matching VS Code exactly) */
+    --text-0: #ffffff; /* text on colored elements (white) */
+    --text-1: #EEFFFF; /* bright white text for emphasis */
+    --text-2: #BFC7D5; /* headings and normal text (editor foreground) */
+    --text-3: #BFC7D5; /* normal text (same as editor foreground) */
+    --text-4: #6C739A; /* icon buttons and channels (sidebar foreground) */
     --text-5: #697098; /* muted channels/chats and timestamps */
 
     /* background and dark colors - Based on Palenight (matching VS Code exactly) */
     --bg-1: #2C2F40; /* dark buttons when clicked */
-    --bg-2: #232635; /* dark buttons */
-    --bg-3: #25293A; /* spacing, secondary elements (sidebar) */
-    --bg-4: #292D3E; /* main background color (editor) */
+    --bg-2: #242839; /* dark buttons and server list (darkest) */
+    --bg-3: #25293A; /* spacing, secondary elements, sidebars (dark) */
+    --bg-4: #292D3E; /* main background color, chat area (lighter) */
     --hover: hsla(261, 51%, 56%, 0.1); /* channels and buttons when hovered */
     --active: hsla(261, 51%, 56%, 0.2); /* channels and buttons when clicked or selected */
     --active-2: hsla(261, 51%, 56%, 0.3); /* extra state for transparent buttons */
@@ -675,9 +675,9 @@ body {
     --streaming: #C792EA; /* change to ##9147ff for default */
     --offline: var(--text-4); /* change to #83838b for default offline color */
 
-    /* border colors */
-    --border-light: hsla(261, 51%, 56%, 0.1); /* light border color */
-    --border: hsla(261, 51%, 56%, 0.2); /* normal border color */
+    /* border colors - subtle borders like VS Code */
+    --border-light: rgba(44, 47, 64, 0.6); /* light border color - subtle gray */
+    --border: #2C2F40; /* normal border color - VS Code panel border */
     --button-border: hsla(0, 0%, 100%, 0.1); /* neutral border color of buttons */
 
     /* base colors - Palenight palette */
@@ -731,14 +731,14 @@ body {
         --background-message-highlight-hover: var(--reply-hover);
         --background-message-hover: var(--message-hover);
 
-        --background-primary: var(--bg-4);
-        --background-secondary: var(--bg-3);
-        --background-secondary-alt: var(--bg-3);
-        --background-tertiary: var(--bg-4);
+        --background-primary: var(--bg-4); /* main chat area - lighter */
+        --background-secondary: var(--bg-3); /* sidebars - dark */
+        --background-secondary-alt: var(--bg-3); /* alternative sidebar - dark */
+        --background-tertiary: var(--bg-2); /* deepest background - darkest */
 
         --bg-base-primary: var(--bg-4); /* screenshare window? */
-        --bg-base-secondary: var(--bg-4);
-        --bg-base-tertiary: var(--bg-3);
+        --bg-base-secondary: var(--bg-3);
+        --bg-base-tertiary: var(--bg-2);
         --background-mod-subtle: var(--hover);
         --background-mod-normal: var(--active);
         --background-mod-strong: var(--active-2);
